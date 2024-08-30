@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-    <div class="threejs-section">
-        <h1>My Projects</h1>
-        <div id="threejs-container"></div>
+    <div class="portfolio-row">
+        <div class="project-container" data-url="https://github.com/user/project1">
+            <div class="threejs-cube" id="cube1"></div>
+            <p class="project-name">Project 1</p>
+        </div>
+        <div class="project-container" data-url="https://github.com/user/project2">
+            <div class="threejs-cube" id="cube2"></div>
+            <p class="project-name">Project 2</p>
+        </div>
+        <div class="project-container" data-url="https://github.com/user/project3">
+            <div class="threejs-cube" id="cube3"></div>
+            <p class="project-name">Project 3</p>
+        </div>
+        <!-- Add more project containers as needed -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
