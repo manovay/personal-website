@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manovay Landing Page</title>
+    <title>Landing Page</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="tv-screen">
-        <div id="three-canvas-container"></div>
-        <div class="crt-effect"></div>
-        <h1>AWGE</h1>
-        <p onclick="showPortfolio()" class="start-button">Press Start</p>
-        <p class="copyright">&copy; 2024 AWGE</p>
+    <div class="landing-page">
+        <div class="background-overlay"></div>
+        <div class="content">
+            <h1 class="name-title">Your Name</h1>
+            <ul class="menu-options">
+                <li class="menu-item" onclick="window.location.href='newpage1.html'">New Project</li>
+                <li class="menu-item" onclick="window.location.href='resume.html'">Resume</li>
+                <li class="menu-item" onclick="window.location.href='portfolio.html'">Portfolio</li>
+                <li class="menu-item" onclick="window.location.href='contact.html'">Contact</li>
+            </ul>
+            <div id="pointer" class="pointer" style="display: none;"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
