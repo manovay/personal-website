@@ -6,11 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to update the pointer position
     function updatePointer(index) {
         const selectedItem = menuItems[index];
-        const pointerLeftOffset = 1000;  // Small horizontal adjustment
-        const pointerTopOffset = 400;     // Small vertical adjustment
-        pointer.style.left = (selectedItem.offsetLeft + pointerLeftOffset) + 'px';
-        pointer.style.top = (selectedItem.offsetTop + pointerTopOffset) + 'px';
-        pointer.style.display = 'block';
+        const selectedItemRect = selectedItem.getBoundingClientRect();
+
+        // Directly use the selected item's coordinates relative to the window
+        pointer.style.left = (selectedItemRect.left - 40) + 'px'; // Adjust the pointer to the left of the item
+        pointer.style.top = selectedItemRect.top + 'px';  // Align the pointer with the top of the item
+        pointer.style.display = 'block'; // Ensure the pointer is visible
 
         // Reset all items
         menuItems.forEach(item => item.classList.remove('active'));
@@ -19,9 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedItem.classList.add('active');
     }
 
-    // Initial position of the pointer
-    updatePointer(currentIndex);
 
+    window.onload = function () {
+        updatePointer(currentIndex);  // Initial pointer position when the page loads
+    };
     // Event listener for keyboard inputs
     document.addEventListener('keydown', function (event) {
         if (event.key === 'ArrowDown') {
@@ -33,5 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (event.key === 'Enter') {
             menuItems[currentIndex].click(); // Simulate click on current item
         }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function () {
+        updatePointer(currentIndex); // Update pointer position on window resize
     });
 });
