@@ -38,12 +38,16 @@ createCube('cube2');
 createCube('cube3');
 
 // Handle click events for the project containers
+// Handle click events for the project containers
 document.querySelectorAll('.project-container').forEach(container => {
     container.addEventListener('click', () => {
         const url = container.getAttribute('data-url');
-        window.location.href = url;
+        if (url) {
+            window.location.href = url;
+        }
     });
 });
+
 
 // Adjust sizes on window resize
 window.addEventListener('resize', () => {
