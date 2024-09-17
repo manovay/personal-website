@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motorcycle Rideability Project</title>
+  <link rel="stylesheet" href="../css/resume.css">
+</head>
+<body> 
+  <header>
+    <h1>Motorcycle Rideability Web Application</h1>
+  </header>
+  
+  <section>
+    <h2>Project Overview</h2>
+    <p>Developed a <strong>web-based application</strong> that provides a <strong>rideability score</strong> based on <strong>real-time weather conditions</strong>, allowing motorcyclists to make informed decisions about riding.</p>
+    <p><strong>GitHub Repository:</strong> <a href="https://github.com/manovay/Motorcycle-" target="_blank">View Project on GitHub</a></p>
+  </section>
+
+  <section>
+    <h2>Core Features</h2>
+    <ul>
+      <li><strong>Real-time Weather Data</strong> - Live weather info displayed based on an input ZIP code.</li>
+      <li><strong>Rideability Score</strong> - Calculated using a predefined formula, with special weights for factors such as precipitation, visibility, and wind speed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Technologies Used</h2>
+    <ul>
+      <li><strong>Frontend</strong>: HTML, CSS, JavaScript</li>
+      <li><strong>Backend</strong>: Node.js, Express.js</li>
+      <li><strong>Database</strong>: PouchDB for storing and managing searches</li>
+      <li><strong>API</strong>: Utilized OpenWeather API to fetch real-time weather data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>RESTful API</h2>
+    <ul>
+      <li><strong>GET /api/weather/:zipCode</strong>: Fetches weather data and calculates the rideability score.</li>
+      <li><strong>POST /api/searches</strong>: Creates a new search entry with weather data and rideability score.</li>
+      <li><strong>PUT /api/searches/:id</strong>: Updates a search entry based on the unique ID.</li>
+      <li><strong>DELETE /api/searches/:id</strong>: Deletes a specific search entry.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>CRUD Functionality</h2>
+    <p>Designed and implemented full **CRUD** (<strong>Create, Read, Update, Delete</strong>) endpoints for managing searches. Integrated <strong>PouchDB</strong> for seamless storage and retrieval.</p>
+  </section>
+
+  <section>
+    <h2>User Interface</h2>
+    <ul>
+      <li>Responsive design using HTML, CSS, and JavaScript.</li>
+      <li>Features input validation, error handling for ZIP code inputs, and dynamic displays of weather data and rideability scores.</li>
+      <li>Showcases recent searches with delete capabilities.</li>
+    </ul>
+  </section>
+
+</body>
+</html>
