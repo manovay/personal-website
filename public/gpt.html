@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparing GPT and Rosette for Program Synthesis</title>
+  <link rel="stylesheet" href="../css/resume.css">
+</head>
+<body> 
+  <header>
+    <h1>Comparing GPT and Rosette for Program Synthesis</h1>
+    <p><strong>Team:</strong> Ern Kim, Jineshwar Nariani, Lana Vu, Manovay Sharma, Mishti Gala, Nikhila Peravali</p>
+    <p><strong>Mentor:</strong> Angela Upreti</p>
+  </header>
+  
+  <section>
+    <h2>Project Overview</h2>
+    <p>This project, conducted under the UMass URV program, explores the capabilities of GPT and Rosette in automating program synthesis. Our research focuses on tasks such as bug detection, synthesis, optimization, and verification, comparing the performance of both tools across diverse programming challenges.</p>
+  </section>
+
+  <section>
+    <h2>Key Findings</h2>
+    <ul>
+      <li><strong>Correctness:</strong> Rosette guarantees correctness if the specification is correct, while GPT may generate incorrect results, especially with vague specifications.</li>
+      <li><strong>Specification:</strong> GPT’s specifications are easier to write but often lack precision. Rosette requires complete and formal specifications.</li>
+      <li><strong>Program Space:</strong> Rosette operates on a small, safe subset of datatypes, whereas GPT can generate code in various languages, though its outputs are often incorrect.</li>
+      <li><strong>Speed:</strong> GPT is faster in synthesis and bug detection, while Rosette excels in verification tasks.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Methods</h2>
+    <p>We assessed three program synthesis tools: GenProg, Sketch, and Rosette, ultimately selecting Rosette due to its versatility, superior documentation, and ease of use. The research involved using GPT and Rosette to solve 20 diverse code generation problems, including the identification of problematic inputs and the synthesis of specific program sections.</p>
+  </section>
+
+  <section>
+    <h2>Technologies and Tools Used</h2>
+    <ul>
+      <li><strong>Tools:</strong> GPT, Rosette, GenProg, Sketch</li>
+      <li><strong>Programming Language:</strong> Racket</li>
+      <li><strong>Synthesis Approach:</strong> GPT leverages NLP algorithms for prediction, while Rosette uses SMT solver-aided search.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Work</h2>
+    <ul>
+      <li>Scaling up our initial findings to a larger set of synthesis tasks.</li>
+      <li>Exploring automation of comparison tasks using benchmarks.</li>
+      <li>Investigating the possibility of combining GPT’s ease of specification writing with Rosette’s correctness guarantees.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example Task: Integer Bit Check</h2>
+    <p>We tasked both GPT and Rosette with solving a synthesis problem: determining if an integer fits within a specified bit-width (e.g., 8 bits). GPT generated a program, and Rosette verified its correctness, returning an <strong>unsat</strong> result.</p>
+    <p><strong>GPT Prompt:</strong> Write a Racket program that takes in an integer <em>x</em> and returns true if <em>x</em> can be represented with 8 bits.</p>
+    <p><strong>GPT Output:</strong> <code>(define (intI-gm_?? x) (and (&lt; -129 x) (&lt; x 128)))</code></p>
+    <p>Rosette's verification query confirmed the program's correctness.</p>
+  </section>
+
+  <section>
+    <h2>References</h2>
+    <ul>
+      <li>Torlak, E., & Bodik, R. (2013). Growing solver-aided languages with Rosette.</li>
+      <li>Polikarpova, N. (2020, Aug). Program Synthesis [PowerPoint slides]. UCSD.</li>
+      <li>Solar-Lezama, A. (2008). Program synthesis by sketching [PhD thesis].</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -83,9 +83,8 @@ function createCube(containerId) {
 // Load the 3D model for the projects onto the scene
 loadModel('cube1', '../images/motorcycle.gltf',1); 
 loadModel('cube2', '../images/football.gltf',0.075)
-loadModel('cube3', '../images/marvelscene.gltf',0.03)
-
-// createCube('cube4');
+loadModel('cube3', '../images/computer.gltf',0.5)
+loadModel('cube4', '../images/marvelscene.gltf',0.03)
 
 // Handle click events for the project containers
 document.querySelectorAll('.project-container').forEach(container => {
