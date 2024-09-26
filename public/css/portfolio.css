@@ -6,11 +6,14 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Highwind'; /* Replace with the actual font name if different */
-    src: url('../font/highwind/Highwind.otf') format('opentype'); /* Replace with the correct path and format */
+    font-family: 'Highwind';
+    src: url('../font/highwind/Highwind.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+
+
+
 /* General Styles for the Portfolio Page */
 body {
     margin: 0;
@@ -35,6 +38,7 @@ body {
     margin: 0 auto;
 }
 
+
 /* Style for each project container */
 .project-container {
     display: flex;
@@ -44,18 +48,21 @@ body {
     transition: transform 0.3s ease;
 }
 
+
 .project-container:hover {
     transform: scale(1.1);
 }
+
 
 /* Cube or 3D model container */
 .threejs-cube {
     width: 200px;
     height: 200px;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.1); /* Placeholder for the model */
+    background-color: rgba(255, 255, 255, 0.1); 
     border: 2px solid #fff;
 }
+
 
 /* Style for the project names */
 .project-name {
@@ -65,24 +72,30 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     letter-spacing: 5px;
     text-align: center;
-    margin-bottom: 10px; /* Add spacing before description */
+    margin-bottom: 10px; 
 }
+
 
 /* Style for the project descriptions */
 .project-description {
-    font-family: 'Highwind', sans-serif; /* Apply Highwind font */
+    font-family: 'Highwind', sans-serif;
     font-size: 25px;
     color: #ffffff;
     text-align: center;
-    max-width: 250px; /* Optional: Adjust width to fit under the cube */
+    max-width: 250px;
     line-height: 1.5;
-    margin-top: -10px; /* Bring it closer to the name if needed */
+    margin-top: -10px;
     letter-spacing: 5px;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
+
 /* Add a hover effect to the project name */
 .project-container:hover .project-name {
     color: #fff;
+    transform: scale(1.1);
     text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
 }
+
+
+

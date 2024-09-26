@@ -1,42 +1,59 @@
-// Basic setup for Three.js
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
-
-const renderer = new THREE.WebGLRenderer({ alpha: true }); // Alpha to support transparency
-renderer.setSize(window.innerWidth, window.innerHeight);
-
 // Function to load a GLTF model
-function loadModel(containerId, modelPath) {
+function loadModel(containerId, modelPath, modelScale) {
+    
     const container = document.getElementById(containerId);
     
-    // Create the renderer and attach it immediately to the container
+    // Create the renderer 
     const modelRenderer = new THREE.WebGLRenderer({ alpha: true });
+    //Set size of tenderer to container
     modelRenderer.setSize(container.clientWidth, container.clientHeight);
+    //Append to the container, and thus, the dom element
     container.appendChild(modelRenderer.domElement);
     
+    //Required for three.js
     const modelScene = new THREE.Scene();
     const loader = new THREE.GLTFLoader();
 
+    //loads model, requires the path as well as the extension gltf
     loader.load(modelPath, function (gltf) {
+
+        //create a gltf scene
         const model = gltf.scene;
-        model.scale.set(1, 1, 1); // Adjust model scale as needed
+        model.scale.set(modelScale, modelScale, modelScale); // Adjust model scale as needed
+        //add model to scene
         modelScene.add(model);
 
+        //sets the camera, starts with the field of view, aspect ratio, near and far planes ( distance from the camera)
         const modelCamera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        //sets position of camera at z axis at 2 units away 
         modelCamera.position.z = 2;
 
+        const ambientLightModel = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light for the model
+        modelScene.add(ambientLightModel);
+
+        const directionalLightModel = new THREE.DirectionalLight(0xffffff, 1); // Directional white light for the model
+        directionalLightModel.position.set(5, 10, 7.5);
+        modelScene.add(directionalLightModel);
+
+        //spins the models
         function animate() {
+            //creates a loop for the javascript scene, recursively calls itself
             requestAnimationFrame(animate);
-            model.rotation.y += 0.01; // Rotate the model
+            //rotates on the y and x axis per frame
+            model.rotation.y += 0.01;
+            model.rotation.x += 0.02; 
+            //renders the updated scene 
             modelRenderer.render(modelScene, modelCamera);
         }
+        // calls animate for the first time 
         animate();
+
     }, undefined, function (error) {
+        // incase an error occurs loading it
         console.error('An error occurred loading the model:', error); // Error handling
     });
 }
-// Function to create a rotating cube
+// Function to create a rotating cube, copied from online as it is a placeholder 
 function createCube(containerId) {
     const container = document.getElementById(containerId);
     const cubeScene = new THREE.Scene();
@@ -62,12 +79,13 @@ function createCube(containerId) {
     animate();
 }
 
-// Load the 3D model for the first project
-loadModel('cube1', '../images/ImageToStl.com_yamaha m1.gltf'); // Replace with the path to your 3D model
 
-// Create cubes for the other projects
-createCube('cube2');
-createCube('cube3');
+// Load the 3D model for the projects onto the scene
+loadModel('cube1', '../images/motorcycle.gltf',1); 
+loadModel('cube2', '../images/football.gltf',0.075)
+loadModel('cube3', '../images/marvelscene.gltf',0.03)
+
+// createCube('cube4');
 
 // Handle click events for the project containers
 document.querySelectorAll('.project-container').forEach(container => {

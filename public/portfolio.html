@@ -7,30 +7,38 @@
     <link rel="stylesheet" href="../css/portfolio.css">
 </head>
 <body>
+
+    <!-- Says "cube" as those are the placeholders and i'd rather not change that -->
     <div class="portfolio-row">
         <div class="project-container" data-url="rideability.html">
             <div class="threejs-cube" id="cube1"></div>
             <p class="project-name">Project I</p>
-            <p class="project-description">Developed using Node.js</p>
+            <p class="project-description">Real-Time Weather Insights for Safer Rides <br>Powered by Node.js, Express, and OpenWeather API</p>
         </div>
         
-        <div class="project-container" data-url="https://github.com/user/project2">
+        <div class="project-container" data-url="mvp.html">
             <div class="threejs-cube" id="cube2"></div>
             <p class="project-name">Project II</p>
-            <p class="project-description">Developed using React.js and MongoDB, this web app tracks user activity.</p>
+            <p class="project-description">NFL MVP Analysis <br>Powered by R and NFL Stats</p>
         </div>
-        <div class="project-container" data-url="https://github.com/user/project3">
+        <div class="project-container" data-url="comics.html">
             <div class="threejs-cube" id="cube3"></div>
             <p class="project-name">Project III</p>
-            <p class="project-description">Developed using React.js and MongoDB, this web app tracks user activity.</p>
+            <p class="project-description">Stay updated with New Comic Issues <br> Powered by Node.js, Express, Marvel API and MongoDB </p>
         </div>
-        <!-- Add more project containers as needed -->
-    </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    <!-- Load GLTFLoader after Three.js -->
+        <!-- WIP - for going to projects 4-6, etc.  -->
+<!--         
+        <div class="navigation">
+            <button onclick="goToNextPage()">Next</button>
+        </div> -->
+
+
+    <!-- Scripts to load three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
-    <!-- Load custom JavaScript -->
     <script src="../js/portfolio.js"></script>
 
 </body>

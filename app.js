@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Route to serve the main HTML file (home.html or index.html)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/html/home.html')); // Adjust to point to your main HTML file
+    res.sendFile(path.join(__dirname, '/public/home.html')); // Adjust to point to your main HTML file
 });
 
 // Start the server
