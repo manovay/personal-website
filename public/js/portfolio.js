@@ -54,30 +54,30 @@ function loadModel(containerId, modelPath, modelScale) {
     });
 }
 // Function to create a rotating cube, copied from online as it is a placeholder 
-function createCube(containerId) {
-    const container = document.getElementById(containerId);
-    const cubeScene = new THREE.Scene();
+// function createCube(containerId) {
+//     const container = document.getElementById(containerId);
+//     const cubeScene = new THREE.Scene();
 
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff });
-    const cube = new THREE.Mesh(geometry, material);
-    cubeScene.add(cube);
+//     const geometry = new THREE.BoxGeometry();
+//     const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff });
+//     const cube = new THREE.Mesh(geometry, material);
+//     cubeScene.add(cube);
 
-    const cubeCamera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    cubeCamera.position.z = 2;
+//     const cubeCamera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+//     cubeCamera.position.z = 2;
 
-    const cubeRenderer = new THREE.WebGLRenderer({ alpha: true });
-    cubeRenderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(cubeRenderer.domElement);
+//     const cubeRenderer = new THREE.WebGLRenderer({ alpha: true });
+//     cubeRenderer.setSize(container.clientWidth, container.clientHeight);
+//     container.appendChild(cubeRenderer.domElement);
 
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        cubeRenderer.render(cubeScene, cubeCamera);
-    }
-    animate();
-}
+//     function animate() {
+//         requestAnimationFrame(animate);
+//         cube.rotation.x += 0.01;
+//         cube.rotation.y += 0.01;
+//         cubeRenderer.render(cubeScene, cubeCamera);
+//     }
+//     animate();
+// }
 
 
 // Load the 3D model for the projects onto the scene

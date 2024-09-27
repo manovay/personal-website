@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-/* Resetting some basic styles */
+
 body, h1, ul, li {
     margin: 0;
     padding: 0;
@@ -18,9 +18,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     overflow: hidden;
-    letter-spacing: 2px; /* Add spacing across the entire body */
+    letter-spacing: 2px; 
 }
 
 .landing-page {
@@ -44,46 +44,50 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
 }
 
 .name-title {
     font-family: 'Enge Etienne', serif;
-    font-size: 64px;
-    color: #fff;
-    font-weight: normal; /* Try 'lighter' or '300' if available */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-    margin-bottom: 20px;
+    font-size: 96px; 
+    font-weight: normal; 
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
     letter-spacing: 1px;
 }
 
-
 .pointer {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     background-image: url('../images/final_fantasy_glove_pointer_for_samsung_devices_by_maxberriostorres_def1c48-fullview.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 3;
-    transition: top 0.2s ease;
+    transition: left 0.2s ease, top 0.2s ease;
 }
 
 .menu-options {
-    position: absolute;
-    top: 500%;
-    right: 25%;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .menu-item {
     font-family: 'Enge Etienne', serif;
-    font-size: 24px;
-    color: #ccc;
+    font-size: 48px;
+    color: #ffffff;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
     margin: 10px 0;
     cursor: pointer;
     transition: color 0.3s ease, text-shadow 0.3s ease;
-    letter-spacing: 5px; /* Add extra spacing to menu items */
+    letter-spacing: 5px; 
 }
 
 .menu-item.active,
