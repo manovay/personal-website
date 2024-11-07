@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function updatePointer(index) {
         const selectedItem = menuItems[index];
         const selectedItemRect = selectedItem.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        let pointerLeftOffset = windowWidth < 600 ? -60 : -40;
 
         // Directly use the selected item's coordinates relative to the window
-        pointer.style.left = (selectedItemRect.left - 40) + 'px'; // Adjust the pointer to the left of the item
+        pointer.style.left = (selectedItemRect.left + pointerLeftOffset) + 'px'; // Adjust the pointer to the left of the item
         pointer.style.top = selectedItemRect.top + 'px';  // Adjist the pointer with the top of the item
         pointer.style.display = 'block'; // Ensure the pointer is visible
 

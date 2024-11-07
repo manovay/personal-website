@@ -11,8 +11,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
-
+@font-face {
+    font-family: 'Crimson';
+    src: url('../font/crimson/CrimsonText-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* General Styles for the Portfolio Page */
 body {
@@ -38,7 +42,6 @@ body {
     margin: 0 auto;
 }
 
-
 /* Style for each project container */
 .project-container {
     display: flex;
@@ -48,11 +51,9 @@ body {
     transition: transform 0.3s ease;
 }
 
-
 .project-container:hover {
     transform: scale(1.1);
 }
-
 
 /* Cube or 3D model container */
 .threejs-cube {
@@ -62,7 +63,6 @@ body {
     background-color: rgba(255, 255, 255, 0.1); 
     border: 2px solid #fff;
 }
-
 
 /* Style for the project names */
 .project-name {
@@ -75,10 +75,9 @@ body {
     margin-bottom: 10px; 
 }
 
-
 /* Style for the project descriptions */
 .project-description {
-    font-family: 'Highwind', sans-serif;
+    font-family: 'Crimson';
     font-size: 25px;
     color: #ffffff;
     text-align: center;
@@ -89,7 +88,6 @@ body {
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
-
 /* Add a hover effect to the project name */
 .project-container:hover .project-name {
     color: #fff;
@@ -97,5 +95,36 @@ body {
     text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
 }
 
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    body {
+        display: block; /* Change from flex to block layout */
+        height: auto; /* Remove height restriction */
+        min-height: 100vh; /* Allow content to grow beyond viewport height */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
 
+    .portfolio-row {
+        flex-direction: column;
+        padding: 20px; /* Add padding for better spacing */
+    }
 
+    .project-container {
+        flex: 1 1 100%; /* Adjust to full width for mobile */
+        margin-bottom: 20px;
+    }
+
+    .threejs-cube {
+        width: 150px; /* Adjust cube size for mobile */
+        height: 150px;
+    }
+
+    .project-name {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .project-description {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+}

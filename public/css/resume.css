@@ -1,5 +1,38 @@
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2, h3 {
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 1em;
+    }
+}
+
+
+@font-face {
+    font-family: 'Crimson';
+    src: url('../font/crimson/CrimsonText-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Crimson';
     color: #ccc; 
     background-color: black; 
     margin: 0;
@@ -18,10 +51,12 @@ body {
 }
 
 h1 {
+    display: flex;
     font-size: 32px; 
     color: #fff;
     text-align: left; 
     margin-bottom: 10px;
+    align-items: center;
 }
 
 p {
@@ -84,4 +119,27 @@ button:hover {
     color: #fff;
     border-color: #fff;
     text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
+}
+.prev-button,
+.next-button,
+.home-button {
+    display: inline-block;
+    font-size: 22px;
+    padding: 10px 20px;
+    background-color: #000000; /* Example button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    float: right;
+  }
+ 
+  
+.prev-button.active,
+.prev-button:hover,
+.next-button.active,
+.next-button:hover,
+.home-button.active,
+.home-button:hover {
+    color: #0026ff;
+    text-shadow: 5px 5px 50px rgba(255, 255, 255, 0.8);
 }
