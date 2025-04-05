@@ -85,6 +85,7 @@ loadModel('cube1', './images/motorcycle.gltf',1);
 loadModel('cube2', './images/football.gltf',0.075)
 loadModel('cube3', './images/computer.gltf',0.5)
 loadModel('cube4', './images/marvelscene.gltf',0.03)
+loadModel('cube5', './images/film.gltf',1.5)
 
 // Handle click events for the project containers
 document.querySelectorAll('.project-container').forEach(container => {

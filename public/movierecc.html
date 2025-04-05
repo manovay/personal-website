@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Group Movie Recommender</title>
+  <link rel="stylesheet" href="css/resume.css" />
+</head>
+<body>
+  <header>
+    <h1>Group Movie Recommender Web Application</h1>
+  </header>
+
+  <a href="home.html" class="home-button">HOME</a>
+  <a href="comics.html" class="prev-button">PREV</a>
+
+  <section>
+    <h2>Project Overview</h2>
+    <p>Built a <strong>real-time group recommendation system</strong> that helps multiple users agree on a movie to watch based on their individual ratings. Powered by a <strong>custom PyTorch model</strong> trained on the MovieLens dataset and served using FastAPI, this project simulates a collaborative filtering environment across a full-stack interface.</p>
+    <p><strong>GitHub Repository:</strong> <a href="https://github.com/manovay/movie-recc" target="_blank">View Project on GitHub</a></p>
+  </section>
+
+  <section>
+    <h2>Core Features</h2>
+    <ul>
+      <li><strong>Room-based system</strong> – Users join a shared room to participate in group voting.</li>
+      <li><strong>Rating & Submission</strong> – Each user rates 5 movies, and once all users submit, the model runs a prediction pass.</li>
+      <li><strong>Bias correction</strong> – Implements <strong>residual-based bias correction</strong> so each user’s taste is fairly represented.</li>
+      <li><strong>Top 3 recommendations</strong> – The group receives three optimized movie recommendations based on their combined inputs.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Technologies Used</h2>
+    <ul>
+      <li><strong>Frontend</strong>: HTML, CSS, JavaScript (Vanilla)</li>
+      <li><strong>Backend</strong>: FastAPI (Python), WebSockets</li>
+      <li><strong>Machine Learning</strong>: PyTorch, trained on MovieLens 100k</li>
+      <li><strong>Data</strong>: MovieLens dataset + genre vectors</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Model Architecture</h2>
+    <ul>
+      <li>User and item embeddings</li>
+      <li>Genre vector fed through a dense layer</li>
+      <li>BatchNorm + Dropout for regularization</li>
+      <li>Bias correction applied per user based on prior residuals</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>REST + WebSocket APIs</h2>
+    <ul>
+      <li><strong>WebSocket /ws</strong> – Handles real-time room communication</li>
+      <li><strong>POST /api/recommend</strong> – Triggers the recommendation pipeline for a group</li>
+      <li><strong>GET /api/movies</strong> – Returns movies to rate (optionally by genre)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>User Interface</h2>
+    <ul>
+      <li>Minimal, responsive design with live updates via WebSocket</li>
+      <li>Genre dropdown, dynamic movie list with rating inputs</li>
+      <li>Displays final group recommendation as soon as all users finish</li>
+    </ul>
+  </section>
+
+  <a href="comics.html" class="prev-button">PREV</a>
+</body>
+</html>
