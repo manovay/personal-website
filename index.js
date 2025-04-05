@@ -1,16 +1,18 @@
 const express = require('express');
 const path = require('path');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 3000; // You can change the port if needed
 
-// Serve static files from your main directory (or "public" if you have one)
-app.use(express.static(path.join(__dirname, '/')));
+// Serve static files (HTML, JS, CSS, models, etc.) from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Fallback for single-page apps (optional)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'portfolio.html')); // or index.html
+// Route to serve the main HTML file (home.html or index.html)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/home.html')); // Adjust to point to your main HTML file
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
