@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "dev:redux": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "postbuild": "node -e \"const fs=require('fs');fs.mkdirSync('public',{recursive:true});fs.cpSync('dist/redux','public/redux',{recursive:true});\""
   },
   "keywords": [],
   "author": "",

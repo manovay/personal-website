@@ -14,10 +14,11 @@ app.use((req, res, next) => {
     res.redirect(301, '/redux' + (suffix || '/'));
 });
 
-// React app (Vite build output). redirect: false avoids /redux ↔ /redux/ fights with reverse proxies (ERR_TOO_MANY_REDIRECTS).
-app.use('/redux', express.static(reduxDist, { redirect: false }));
+// React app assets (JS/CSS). Do not use redirect:false here — it turns directory requests into 404s
+// (and proxies that strip trailing slashes make /redux/ look like a bare directory → "Not Found").
+app.use('/redux', express.static(reduxDist));
 
-// Client-side routes (/redux/s26, etc.) → SPA shell
+// HTML shell for client routes and for /redux vs /redux/ when static does not serve index
 app.use((req, res, next) => {
     if (req.method !== 'GET' && req.method !== 'HEAD') return next();
     if (!req.path.startsWith('/redux')) return next();
