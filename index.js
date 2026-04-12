@@ -14,13 +14,8 @@ app.use((req, res, next) => {
     res.redirect(301, '/redux' + (suffix || '/'));
 });
 
-// Normalize /redux → /redux/ before static / SPA
-app.get('/redux', (req, res) => {
-    res.redirect(301, '/redux/');
-});
-
-// React app (Vite build output)
-app.use('/redux', express.static(reduxDist));
+// React app (Vite build output). redirect: false avoids /redux ↔ /redux/ fights with reverse proxies (ERR_TOO_MANY_REDIRECTS).
+app.use('/redux', express.static(reduxDist, { redirect: false }));
 
 // Client-side routes (/redux/s26, etc.) → SPA shell
 app.use((req, res, next) => {
