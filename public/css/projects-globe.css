@@ -20,6 +20,7 @@
   --tab-glow: rgba(217, 17, 17, 0.28);
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --globe-ui-offset: 7.25rem;
 }
 
 *,
@@ -31,7 +32,7 @@
 html {
   scroll-behavior: smooth;
   /* Keep anchor jumps (e.g. #top / #project-idx-*) below the fixed header */
-  scroll-padding-top: 9.25rem;
+  scroll-padding-top: var(--globe-ui-offset);
 }
 
 html,
@@ -99,7 +100,7 @@ body.is-list .perf-hud {
   inset: 0 0 auto 0;
   z-index: 10;
   pointer-events: none;
-  padding: 2.35rem 3.0rem 1.35rem;
+  padding: 1.25rem 2.0rem 0.85rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -107,8 +108,8 @@ body.is-list .perf-hud {
   gap: 1rem;
   background: linear-gradient(
     to bottom,
-    rgba(14, 16, 16, 0.92) 0%,
-    rgba(14, 16, 16, 0.62) 58%,
+    rgba(14, 16, 16, 0.9) 0%,
+    rgba(14, 16, 16, 0.55) 52%,
     transparent 100%
   );
   border-bottom: 1px solid rgba(201, 192, 190, 0.1);
@@ -129,7 +130,7 @@ body.is-list .perf-hud {
   display: inline-block;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.85rem, 4.6vw, 2.55rem);
+  font-size: clamp(1.55rem, 3.7vw, 2.15rem);
   letter-spacing: -0.03em;
   margin: 0;
   line-height: 1.15;
@@ -144,9 +145,9 @@ body.is-list .perf-hud {
 }
 
 .globe-hint {
-  margin: 0.45rem 0 0;
+  margin: 0.3rem 0 0;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   max-width: 42ch;
   line-height: 1.55;
 }
@@ -187,7 +188,7 @@ body.is-list .perf-hud {
   position: relative;
   z-index: 1;
   /* Extra top padding so first row isn't hidden under .globe-ui */
-  padding: 9.25rem 1.5rem 2.75rem;
+  padding: var(--globe-ui-offset) 1.5rem 2.75rem;
   max-width: 1080px;
   margin: 0 auto;
 }
@@ -203,7 +204,7 @@ body.is-list .perf-hud {
   grid-template-columns: 240px 1fr;
   gap: 1.25rem 1.5rem;
   padding: 1.25rem 1.35rem;
-  scroll-margin-top: 8.75rem;
+  scroll-margin-top: var(--globe-ui-offset);
   border-radius: 14px;
   background: linear-gradient(155deg, #14161d 0%, #0f1117 100%);
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -274,9 +275,12 @@ body.is-list .perf-hud {
 }
 
 @media (max-width: 760px) {
+  :root {
+    --globe-ui-offset: 7.75rem;
+  }
   .project-row {
     grid-template-columns: 1fr;
-    scroll-margin-top: 8.75rem;
+    scroll-margin-top: var(--globe-ui-offset);
   }
   .project-model {
     width: 100%;
