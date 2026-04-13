@@ -309,7 +309,7 @@ export default function PortfolioModern() {
             </p>
             <p className="section__cta">
               <a href="mailto:you@example.com">Get in touch</a> ·{' '}
-              <a href="/portfolio.html">3D project gallery</a>
+              <a href="/projects-globe.html">Project gallery</a>
             </p>
           </div>
         </section>
@@ -772,7 +772,7 @@ export default function PortfolioModern() {
               Selected work
             </h2>
             <p className="section__sub">
-              Two builds I like revisiting — more in the <a href="/portfolio.html">gallery</a>.
+              Two builds I like revisiting — more in the <a href="/projects-globe.html">project gallery</a>.
             </p>
           </div>
 
