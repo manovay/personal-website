@@ -532,7 +532,8 @@ function buildListView(loadResults) {
         { root: null, threshold: 0.2 }
     );
 
-    PROJECTS.forEach((p, i) => {
+    for (let i = PROJECTS.length - 1; i >= 0; i -= 1) {
+        const p = PROJECTS[i];
         const row = document.createElement('section');
         row.className = 'project-row';
         row.id = `project-idx-${i}`;
@@ -617,7 +618,7 @@ function buildListView(loadResults) {
         cam.position.z = 2.6;
 
         mini.push({ i, modelWrap, renderer, scene, cam, rootObj });
-    });
+    }
 
     let running = false;
     let raf = 0;
