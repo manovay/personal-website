@@ -496,6 +496,12 @@ function setViewMode(mode) {
         toggle.setAttribute('aria-pressed', String(isList));
         toggle.textContent = isList ? 'Globe view' : 'List view';
     }
+    const hint = document.querySelector('.globe-hint');
+    if (hint) {
+        hint.textContent = isList
+            ? 'Scroll the list. (Globe view might take a second to load.)'
+            : 'Drag to spin the globe. Click a model for details. (Might take a second.)';
+    }
 }
 
 function scrollToHashIfPresent() {
@@ -952,7 +958,9 @@ async function main() {
         // allow layout to settle before scroll
         setTimeout(scrollToHashIfPresent, 0);
     } else {
-        setViewMode('globe');
+        // Default: list view first (globe can be heavier to load/render).
+        setViewMode('list');
+        listController.start();
     }
 
     window.addEventListener('resize', () => {

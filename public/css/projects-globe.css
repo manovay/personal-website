@@ -20,7 +20,7 @@
   --tab-glow: rgba(217, 17, 17, 0.28);
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
-  --globe-ui-offset: 7.25rem;
+  --globe-ui-offset: 6.25rem;
 }
 
 *,
@@ -100,7 +100,7 @@ body.is-list .perf-hud {
   inset: 0 0 auto 0;
   z-index: 10;
   pointer-events: none;
-  padding: 1.25rem 2.0rem 0.85rem;
+  padding: 0.85rem 1.35rem 0.55rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -130,7 +130,7 @@ body.is-list .perf-hud {
   display: inline-block;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.55rem, 3.7vw, 2.15rem);
+  font-size: clamp(1.3rem, 3.0vw, 1.85rem);
   letter-spacing: -0.03em;
   margin: 0;
   line-height: 1.15;
@@ -145,9 +145,9 @@ body.is-list .perf-hud {
 }
 
 .globe-hint {
-  margin: 0.3rem 0 0;
+  margin: 0.22rem 0 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   max-width: 42ch;
   line-height: 1.55;
 }
@@ -170,6 +170,24 @@ body.is-list .perf-hud {
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+/* In list view, the toggle says "Globe view" — give it a gentle aura */
+body.is-list #view-toggle.nav-back {
+  background: color-mix(in srgb, var(--accent-dim) 72%, var(--surface));
+  border-color: rgba(255, 90, 82, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(255, 90, 82, 0.12),
+    0 0 22px rgba(255, 90, 82, 0.18),
+    0 0 44px rgba(217, 17, 17, 0.14);
+}
+
+body.is-list #view-toggle.nav-back:hover {
+  border-color: rgba(255, 90, 82, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(255, 90, 82, 0.18),
+    0 0 26px rgba(255, 90, 82, 0.26),
+    0 0 58px rgba(217, 17, 17, 0.18);
 }
 
 .nav-back:hover {
@@ -276,7 +294,7 @@ body.is-list .perf-hud {
 
 @media (max-width: 760px) {
   :root {
-    --globe-ui-offset: 7.75rem;
+    --globe-ui-offset: 6.75rem;
   }
   .project-row {
     grid-template-columns: 1fr;
