@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Globe</title>
+    <link rel="stylesheet" href="css/projects-globe.css">
+</head>
+<body id="top">
+    <div id="globe-stage"></div>
+
+    <div class="globe-ui">
+        <div>
+            <h1 class="globe-title">Project gallery</h1>
+            <p class="globe-hint">Drag to spin the globe. Click a model for details.</p>
+        </div>
+        <div class="globe-actions">
+            <button type="button" class="nav-back" id="view-toggle" aria-pressed="false">List view</button>
+            <a class="nav-back" href="home.html">← Home</a>
+        </div>
+    </div>
+
+    <pre id="perf-hud" class="perf-hud" aria-live="polite"></pre>
+
+    <main id="list-view" class="list-view" hidden>
+        <div class="list-inner">
+            <!-- populated by js/projects-globe.js -->
+        </div>
+    </main>
+
+    <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <p class="modal-term" id="modal-term"></p>
+            <h2 id="modal-title"></h2>
+            <p id="modal-mesh-stats" class="modal-mesh-stats" hidden></p>
+            <ul id="modal-bullets"></ul>
+            <div class="modal-actions">
+                <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" style="display: none;"></a>
+                <a id="modal-list-link" href="#" style="display: none;">Open in list</a>
+                <button type="button" class="modal-close" id="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="js/projects-globe.js"></script>
+</body>
+</html>
