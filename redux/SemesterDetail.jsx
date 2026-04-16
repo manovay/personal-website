@@ -29,8 +29,8 @@ export default function SemesterDetail() {
           <Link className="semester-minimal-nav__link" to="..">
             ← Timeline
           </Link>
-          <a className="semester-minimal-nav__link" href="/home.html">
-            Home
+          <a className="semester-minimal-nav__link" href="/redux/">
+            Timeline
           </a>
         </nav>
         <header className="semester-inline-heading">

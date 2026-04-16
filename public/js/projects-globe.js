@@ -138,14 +138,14 @@ const PROJECTS = [
     },
     {
         term: 'Spring 2026',
-        title: 'Latency-Aware Rank Scheduling for Low-Rank VLMs (ongoing)',
+        title: 'Value-Centric Soft-GQA on Llama-2-7B: Structured Low-Rank Attention Compressio',
         link: null,
         linkLabel: null,
         bullets: [
-            'Exploring how to allocate low-rank capacity across layers and modalities in compressed vision–language models when total parameters are capped: rank becomes a schedulable resource, and the goal is to favor allocations that preserve task quality while respecting latency-sensitive deployment constraints.',
-            'Implementing and comparing scheduling policies—uniform baselines, importance- or sensitivity-weighted ranks, and explicitly latency-aware heuristics—so you can map the Pareto frontier between accuracy (or downstream scores) and end-to-end latency rather than only model size.',
-            'Standing up a reproducible GPU benchmarking harness that records time-to-first-token (TTFT), time-per-output token (TPOT), tokens/sec throughput, and peak/resident memory under fixed batch and sequence settings, with pinned seeds and configs for apples-to-apples runs across schedules.',
-            'Plumbing chosen rank schedules through a real inference path (prefill/decode loops, batched generation where applicable) and running controlled ablations to isolate the effect of scheduling from other compression knobs, with results tracked in tables/plots for the write-up.',
+            'Designing structured low-rank compression for Llama-2-7B attention, focusing on Value-Centric Soft-GQA.',
+            'Optimizing low-rank capacity allocation across layers to preserve validation perplexity and downstream task accuracy.',
+            'Implementing robust layerwise compression with stable factorization and dynamically scaled ridge regression.',
+            'Conducting structured experimental sweeps, including depth and alpha (residual allocation) variations, to evaluate performance.',
         ],
     },
     {

@@ -20,6 +20,6 @@ Java NN - Java.bin/.gltf (needs to be scaled)
 
 RISC-V - Chip.bin/.gltf (needs to be scaled)
 
-Latency Aware Rank Scheduling - Math.gtlf./bin (needs to be scaled and mesh draw counted) 
+Value-Centric Soft-GQA on Llama-2-7B - Math.gtlf./bin (needs to be scaled and mesh draw counted) 
 
-Adaptice ML Based Moderation - Shield.gltf/bin (needs to be scaled )
+Adaptive ML Based Moderation - Shield.gltf/bin (needs to be scaled )

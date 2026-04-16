@@ -21,13 +21,13 @@ export default function PortfolioModern() {
       </a>
 
       <nav className="site-nav" aria-label="Page">
-        <a className="site-nav__home" href="/home.html">
-          ← Home
+        <a className="site-nav__home" href="/redux/">
+          ← Timeline
         </a>
         <div className="site-nav__links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+          <a href="/projects-globe.html">Projects</a>
           <a href="#academic-timeline">Academic timeline</a>
         </div>
       </nav>
@@ -44,7 +44,7 @@ export default function PortfolioModern() {
           </p>
           <p className="hero__lede">
             Questions about work, projects, or collaboration?{' '}
-            <a href="mailto:you@example.com">Email me</a> — I’m happy to talk.
+            <a href="mailto:manovays2004@gmail.com">Email me</a> — I’m happy to talk.
           </p>
           <div className="hero__social" aria-label="Social links">
             <a
@@ -60,7 +60,7 @@ export default function PortfolioModern() {
             </span>
             <a
               className="hero__pill"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/manovay-sharma/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -69,7 +69,7 @@ export default function PortfolioModern() {
             <span className="hero__dot" aria-hidden="true">
               ·
             </span>
-            <a className="hero__pill" href="mailto:you@example.com">
+            <a className="hero__pill" href="mailto:manovays2004@gmail.com">
               Mail
             </a>
             <span className="hero__dot" aria-hidden="true">
@@ -303,12 +303,12 @@ export default function PortfolioModern() {
               program-synthesis comparisons).
             </p>
             <p>
-              Currently interested in <strong>efficient VLMs</strong> (latency-aware low-rank
-              scheduling) and <strong>ML moderation</strong> pipelines with measurable latency and
-              human-in-the-loop safety.
+              Currently interested in <strong>efficient attention</strong> (Value-Centric Soft-GQA
+              low-rank compression on Llama-2-7B) and <strong>ML moderation</strong> pipelines with
+              measurable latency and human-in-the-loop safety.
             </p>
             <p className="section__cta">
-              <a href="mailto:you@example.com">Get in touch</a> ·{' '}
+              <a href="mailto:manovays2004@gmail.com">Get in touch</a> ·{' '}
               <a href="/projects-globe.html">Project gallery</a>
             </p>
           </div>
@@ -779,26 +779,24 @@ export default function PortfolioModern() {
           <article className="project-row">
             <div className="project-row__media" aria-hidden="true">
               <span className="project-row__badge">01</span>
-              <div className="project-row__art project-row__art--ride">Rideability</div>
+              <div className="project-row__art project-row__art--ride">S&amp;P 500</div>
             </div>
             <div className="project-row__body">
-              <h3 className="project-row__title">Motorcycle Rideability Index</h3>
+              <h3 className="project-row__title">S&amp;P 500 Portfolio Management Platform</h3>
               <p className="project-row__desc">
-                ZIP geocoding, OpenWeather-backed conditions, a rule-based rideability score, and
-                PouchDB-backed search history.
+                AI-assisted portfolio tooling with dashboards for performance and risk tracking.
               </p>
               <ul className="project-row__tags">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>OpenWeather</li>
-                <li>PouchDB</li>
-                <li>Vanilla JS</li>
+                <li>LLM</li>
+                <li>PostgreSQL</li>
+                <li>Flask</li>
+                <li>Plotly</li>
+                <li>Trading APIs</li>
               </ul>
               <div className="project-row__links">
-                <a href="https://github.com/manovay/Motorcycle-" target="_blank" rel="noopener noreferrer">
-                  GitHub
+                <a href="https://ozero.manovay.info" target="_blank" rel="noopener noreferrer">
+                  Live app
                 </a>
-                <a href="/rideability.html">Live page</a>
               </div>
             </div>
           </article>
@@ -806,25 +804,23 @@ export default function PortfolioModern() {
           <article className="project-row project-row--flip">
             <div className="project-row__media" aria-hidden="true">
               <span className="project-row__badge">02</span>
-              <div className="project-row__art project-row__art--film">Recommender</div>
+              <div className="project-row__art project-row__art--film">AP Guide</div>
             </div>
             <div className="project-row__body">
-              <h3 className="project-row__title">Group Movie Recommender</h3>
+              <h3 className="project-row__title">AP Study Guide Generator</h3>
               <p className="project-row__desc">
-                PyTorch embeddings on MovieLens, FastAPI services, WebSocket “rooms” for voting and
-                live refreshed group picks.
+                RAG pipeline over AP exam PDFs to generate grounded explanations and quizzes.
               </p>
               <ul className="project-row__tags">
-                <li>PyTorch</li>
-                <li>FastAPI</li>
-                <li>WebSockets</li>
                 <li>Python</li>
+                <li>RAG</li>
+                <li>MongoDB</li>
+                <li>Embeddings</li>
               </ul>
               <div className="project-row__links">
-                <a href="https://github.com/manovay/movie-recc" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/manovay/ExamMine" target="_blank" rel="noopener noreferrer">
                   GitHub
                 </a>
-                <a href="/movierecc.html">Live page</a>
               </div>
             </div>
           </article>
@@ -834,7 +830,7 @@ export default function PortfolioModern() {
       <footer className="site-footer">
         <span>Manovay Sharma</span>
         <span className="site-footer__sep">·</span>
-        <a href="/home.html">Home</a>
+        <a href="/redux/">Timeline</a>
       </footer>
     </div>
   );

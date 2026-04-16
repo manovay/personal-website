@@ -81,12 +81,12 @@ function HomePage() {
         >
           <motion.a
             className="back-link"
-            href="/home.html"
+            href="/redux/"
             whileHover={reduceMotion ? {} : { x: -4, scale: 1.02 }}
             whileTap={reduceMotion ? {} : { scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 420, damping: 28 }}
           >
-            ← Home
+            ← Timeline
           </motion.a>
           <motion.h1
             className="timeline-title"

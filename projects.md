@@ -82,11 +82,12 @@ Built a cycle-accurate RISC-V (RV32I) processor simulator in Python with single-
 
 #Spring 2026
 
-Latency-Aware Rank Scheduling for Low-Rank VLMs (ongoing) — repository link TBD
-Exploring how to allocate low-rank capacity across layers and modalities in compressed vision–language models when total parameters are capped: rank becomes a schedulable resource, and the goal is to favor allocations that preserve task quality while respecting latency-sensitive deployment constraints.
-Implementing and comparing scheduling policies—uniform baselines, importance- or sensitivity-weighted ranks, and explicitly latency-aware heuristics—so you can map the Pareto frontier between accuracy (or downstream scores) and end-to-end latency rather than only model size.
-Standing up a reproducible GPU benchmarking harness that records time-to-first-token (TTFT), time-per-output token (TPOT), tokens/sec throughput, and peak/resident memory under fixed batch and sequence settings, with pinned seeds and configs for apples-to-apples runs across schedules.
-Plumbing chosen rank schedules through a real inference path (prefill/decode loops, batched generation where applicable) and running controlled ablations to isolate the effect of scheduling from other compression knobs, with results tracked in tables/plots for the write-up.
+Value-Centric Soft-GQA on Llama-2-7B: Structured Low-Rank Attention Compressio
+
+Exploring structured low-rank compression for Llama-2-7B attention projections: This project focuses on Soft-GQA and Value-Centric Soft-GQA methods to reduce the cost of transformer attention, specifically for q_proj, k_proj, and v_proj in a 7B language model. The core hypothesis is that the value pathway carries more reconstruction burden.
+Optimizing low-rank capacity allocation: We investigate how to optimally allocate low-rank capacity across layers, comparing structured methods against baselines like Separate SVD and Shared-KV-only. The rank becomes a schedulable resource, with an emphasis on preserving validation perplexity, SciQ, and ARC-Easy accuracy.
+Implementing robust low-rank factorization and layerwise compression: This includes developing stable truncated SVD and dynamically scaled ridge regression for numerical robustness, coupled with a layerwise streaming compression pipeline designed for memory efficiency in large models.
+Conducting structured experimental sweeps: Experiments involve depth sweeps (analyzing performance degradation with more compressed layers) and alpha sweeps (examing how shifting residual budget between key and value pathways impacts performance), with results systematically evaluated across metrics.
 
 Adaptive ML-Based Moderation System (ongoing) - repository link TBD
 Building end-to-end ML moderation pipeline for a self-hosted chat platform (30–200 users), integrating real-time inference and human-in-the-loop decision workflows
